@@ -1,4 +1,4 @@
-
+//connects background and content 
 
 chrome.runtime.onMessage.addListener(function(request, sender ,senderResponse){
     if (request.todo == "showPageAction"){

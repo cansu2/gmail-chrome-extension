@@ -1,0 +1,36 @@
+{   
+    "manifest_version": 2,
+    "name": "email-tracker",
+    "version": "1.0",
+    "description": "tracking emails",
+        "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "page_action" :{
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html",
+        "default_title": "EmailTracker"
+    },
+    "content_scripts": [
+        {
+            "matches":["*://mail.google.com/*"],
+            "js":["jquery-3.3.1.min", "content.js","src/extensionInjector.js"] 
+        }
+    ],
+    "background": {
+        "scripts": ["jquery-3.3.1.min", "eventPage.js" ],
+        "persistent": false
+    
+    },
+   
+    "web_accessible_resources": [
+        "dist/extension.js"
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "https://developer.chrome.com/*"
+    ]
+  }

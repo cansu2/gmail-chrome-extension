@@ -1,0 +1,20 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "deps": "npm install",
+    "stage": "mkdir dist || echo Dist already exists.",
+    "bundle": "browserify -o dist/extension.js src/extension.js",
+    "build": "npm run stage && npm run bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cansu Alaeddinoglu",
+  "license": "ISC",
+  "dependencies": {
+    "gmail-js": "^0.6.14",
+    "jquery": "^3.3.1",
+    "require": "^2.4.20"
+  }
+}

@@ -28,7 +28,6 @@ gmail.observe.on("open_email", function (id, url, body, xhr) {
     var emailDom = gmail.dom.email(id);
   // Text
     // console.log(emailDom);
-  
     // console.log(emailDom.$el.prevObject["0"].innerText);
 })
 

@@ -13402,6 +13402,8 @@ const GmailFactory = require("gmail-js");
 const gmail = new GmailFactory.Gmail($);
 window.gmail = gmail;
 
+// this code appears every time the page loads, greets the user and shows inbox as an object
+
 gmail.observe.on("load", function () {
     const userEmail = gmail.get.user_email();
     const emails = gmail.get.visible_emails();
@@ -13410,6 +13412,7 @@ gmail.observe.on("load", function () {
 
 });
 
+// this code shows subject, to whom and date for selected email
 
 gmail.observe.on("open_email", function (id, url, body, xhr) {
     const data = gmail.get.email_data(id);
@@ -13420,11 +13423,11 @@ gmail.observe.on("open_email", function (id, url, body, xhr) {
     var emailDom = gmail.dom.email(id);
   // Text
     // console.log(emailDom);
-  
     // console.log(emailDom.$el.prevObject["0"].innerText);
-
-
 })
+
+// this code switchs the hyperlink in the email through specific url 
+
 gmail.observe.on("open_email", function (id) {
 
     $('a').click(function () {
